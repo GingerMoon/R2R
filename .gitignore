@@ -34,3 +34,6 @@ go.work
 go.work.sum
 
 .vscode/
+
+.idea/
+./py/.idea/

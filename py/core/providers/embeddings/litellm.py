@@ -42,16 +42,27 @@ class LiteLLMEmbeddingProvider(EmbeddingProvider):
             )
 
         self.base_model = config.base_model
-        if "amazon" in self.base_model:
-            logger.warn("Amazon embedding model detected, dropping params")
-            litellm.drop_params = True
-        self.base_dimension = config.base_dimension
+        # if any(x in self.base_model for x in ["amazon", "alibaba"]):
+        #     logger.warn("Amazon or Alibaba embedding model detected, dropping params")
+        #     litellm.drop_params = True
+        # if "amazon" in self.base_model:
+        #     logger.warn("Amazon embedding model detected, dropping params")
+        #     litellm.drop_params = True
+        # self.base_dimension = config.base_dimension
+        litellm.drop_params = True
+        self.base_dimension = None
 
     def _get_embedding_kwargs(self, **kwargs):
+        # embedding_kwargs = {
+        #     "model": self.base_model,
+        #     "dimensions": self.base_dimension,
+        # }
         embedding_kwargs = {
             "model": self.base_model,
-            "dimensions": self.base_dimension,
         }
+        if self.base_dimension is not None:
+            embedding_kwargs["dimensions"] = self.base_dimension
+
         embedding_kwargs.update(kwargs)
         return embedding_kwargs
 

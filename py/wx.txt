@@ -1,0 +1,11 @@
+My name is Xiang Wang.
+I am from Shanghai, China.
+I got my bachelor degrees of computer science and English from Shanghai University.
+Computer science is my first major, and English is my second major.
+I worked for many famous foreign companies, including Unisys, SAP, eBay, KaiOS.
+My wife's name is Ginger, and my daughter's name is Hancy.
+Ginger was born on 11th Nov. 1991.
+Hancy was born on 2nd May 2016.
+Hancy loves playing football, drawing pictures. She is a member of her school football team.
+I am working for Giant Network Inc. as a principal software engineer.
+I lead a 7-people backend development team.
